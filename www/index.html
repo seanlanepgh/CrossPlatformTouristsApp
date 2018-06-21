@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDu3cxgU6ZaXQyljKjARSmizd5vQ6u2ug8&libraries=places"></script>
+		<meta http-equiv="Content-Security-Policy" content="default-src * gap:;font-src 'self' data:; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'; media-src *; img-src * filesystem: data:">	
+		<!-- CSS Stylesheets -->
+		<link rel="stylesheet" href="css/myCustomStyle.min.css" />
+		<link rel="stylesheet" href="css/jquery.mobile.icons.min.css" />
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+		<link rel="stylesheet" href="css/custom.css" /> 
+	</head>
+	<body>
+		<!-- Map Page -->
+		<div data-role="page" id ="MapPage" data-theme="b">
+			<div class="main">
+				<!-- Map Page Header -->
+				<div data-role= "header"id="top"> 
+					<h2>Map</h2>
+				</div>
+				<!-- contentDiv that contains all the content of the map page -->
+				<div class="contentDiv">
+					<!-- Search  Address Input Field -->
+					<input  id="searchInput"type="text" placeholder="Search Location Address">
+					<!-- Map -->
+					<div id="mapDiv">
+						<div id="map"></div>
+					</div>
+					<br>
+					<br>
+					<!-- Scroll Hints -->
+					<img class="arrowDown" src="js/images/icons-svg/carat-d-white.svg" />
+					<img class="arrowUp" src="js/images/icons-svg/carat-u-white.svg" />
+				</div>
+				<!-- Popup -->
+				<div id="popup" class="popup">
+
+				  <!-- Modal content -->
+				  <div class="popup-content">
+					<div class="popup-header">
+					  <span class="close">&times;</span> 
+					  <h2 id="popupHead">Searching ...</h2>
+					</div>
+					<div class="popup-body">
+					  
+					  
+					</div>
+				  </div>
+
+				</div>
+				<!-- nearbyPlaces div to contain all the nearbyplaces button and the display your photos button-->
+				<div class = "nearbyPlaces">
+					<h2> Search Nearby Places: </h2>
+					<div class="lineButton">
+						<div class="inLine"><button type="button" value = "cafe"  id="cafeButton">Cafes</button></div>
+						<div class="inLine"><button type="button" value = "hospital"  id="healthButton">Health Centres</button></div>
+						<div class="inLine"><button type="button" value = "train_station" id="trainStationButton" >Train Stations</button></div>
+					</div>
+					<div class="lineButton">
+						<div class="inLine"><button type="button" value = "hotel"  id="hotelButton">Hotels</button></div>
+						<div class="inLine"><button type="button" value = "bank" id="bankButton">Banks</button></div>
+						<div class="inLine"><button type="button" value = "restaurant" id="restaurantButton">Restaurants</button></div>
+					</div>
+					<div class="inLine"><button id="displayPhoto">Display Your Photos</button> </div>
+				</div>	
+			</div>
+			<!-- Map Footer-->
+			<div data-role= "footer" id="bottom"> 
+				<!--Navigation Bar  before searching for nearby Places -->
+				<div data-role="navbar" class= "navbar"  data-iconpos="top" >
+					<ul>
+						<li><button data-icon="camera"  type="button" id="takePhoto">Camera</button></li>
+						<li><a href="#MapPage" data-icon="location">Map</a></li>
+					</ul>
+				</div>
+				<!--Navigation Bar  after searching for nearby Places -->
+				<div data-role="navbar" class= "navbar2"  data-iconpos="top" >
+					<ul>
+						<li><button data-icon="camera"  type="button" id="takePhoto">Camera</button></li>
+						<li><a href="#MapPage" data-icon="location">Map</a></li>
+						<li><a href="#ResultsPage" data-icon="search">Place Results List</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- Place Results Page -->
+		<div data-role="page" id ="ResultsPage" data-theme="b">
+			<div class="main">
+				<!-- Place Results Page  Header -->
+				<div data-role= "header"> 
+					<h3>Place Results List</h3>
+				</div>
+				<!--contentDiv that contains all the content of the place results page -->
+				<div data-role="content">
+					<!-- A listview of searchResults -->
+					<div data-role="listview" id="searchResults" >
+					
+					</div>
+				</div>  
+			</div>
+			<!-- Place Results Page  footer -->
+			<div data-role= "footer"> 
+				<!--Navigation Bar  after searching for nearby Places -->
+				<div data-role="navbar" class= "navbar2"  data-iconpos="top" >
+					<ul>
+						<li><button data-icon="camera"  type="button" id="takePhoto">Camera</button></li>
+						<li><a href="#MapPage" data-icon="location">Map</a></li>
+						<li><a href="#ResultsPage" data-icon="search">Place Results List</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- Javascript -->
+		<script type="text/javascript" src="cordova.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<!--note jqm defaults defines preferences for JQM so needs to be declared before the library--> 
+		<script src="js/jqm_defaults.js"></script>
+		<script src="js/jquery.mobile-1.4.5.min.js"></script> 
+		<script type="text/javascript" src="js/main.js"></script>
+	</body>
+</html>

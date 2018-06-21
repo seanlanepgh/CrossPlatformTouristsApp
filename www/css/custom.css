@@ -1,0 +1,246 @@
+@charset "UTF-8";
+
+.ui-content {
+    border-width: 0;
+    overflow: visible;
+    overflow-x: hidden;
+    padding: 20px;
+}
+.lineButton
+{
+    width:100%;
+    text-align: center;
+}
+.inLine
+{
+   % display: inline-block;
+}
+.nearbyPlaces{
+	margin:10px;
+	padding:5px;
+	background:#FFF;
+	border-radius: 5px;
+    border: 4px solid #0076bc;
+}
+/*  Map Div Style  */
+#mapDiv{
+	width:95vw;
+	height:63vh;
+	margin:5px;
+	background:#FFF;
+	border-radius: 5px;
+    border: 4px solid #0076bc;
+}
+#displayPhoto{
+	%margin:10px;
+	width:100%;
+    text-align: center;
+}
+/* The custom Marker styles */
+.customMarker {   
+    position:absolute;
+    cursor:pointer;
+    background:#424242;
+    width:100px;
+    height:100px;
+    /* -width/2 */
+    margin-left:-50px;
+    /* -height + arrow */
+    margin-top:-110px;
+    border-radius:10px;
+    padding:0px;
+	
+	background: #0076bc;
+	background-position: center center;
+	background-size: cover;
+}
+.customMarker:after { 
+    content:"";
+    position: absolute;
+    bottom: -10px;
+    left: 40px;
+    border-width: 10px 10px 0;
+    border-style: solid;
+    border-color:  #0076bc transparent;
+    display: block;
+    width: 0;
+}
+.customMarker img { 
+    width:90px;
+    height:90px;
+    margin:5px;
+    border-radius:2px;
+}
+/* custom Marker Styles end*/
+.contentDiv {
+    position: relative;
+}
+
+@keyframes bouncing {
+    0% {bottom: 0;}
+    50% {bottom: 20px;}
+    100% {bottom: 0;}
+}
+.main {
+    margin-bottom: 60px; /* Add a bottom margin to avoid content overlay */
+}
+/* Scroll hint Styles */
+.arrowDown {
+    animation: bouncing 1s infinite ease-in-out;
+    bottom: 0;
+    display: block;
+    height: 30px;
+    left: 50%;
+    margin-left: -10px;
+    position: absolute;
+    width: 30px;
+	overflow: hidden;
+}
+.arrowUp {
+    animation: bouncing 1s infinite ease-in-out;
+    bottom: 0;
+    display: block;
+    height: 30px;
+    left: 50%;
+    margin-left: -10px;
+    position: absolute;
+    width: 30px;
+	display:none;
+}
+/* Scroll hint Styles  End */
+/* The navigation bar */
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    position: fixed; /* Set the navbar to fixed position */
+    bottom: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+}
+
+/* Links inside the navbar */
+.navbar ul li a {
+  
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Change background on mouse-over */
+.navbar a:hover {
+    background: #ddd;
+    color: black;
+}
+/* The navigation bar 2*/
+.navbar2 {
+	display:none;
+    overflow: hidden;
+    background-color: #333;
+    position: fixed; /* Set the navbar to fixed position */
+    bottom: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+}
+
+/* Links inside the navbar 2 */
+.navbar2 ul li a {
+  
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Change background on mouse-over */
+.navbar2 a:hover {
+    background: #ddd;
+    color: black;
+}
+/* The Popup (background) */
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    -webkit-animation-name: fadeIn; /* Fade in the background */
+    -webkit-animation-duration: 0.4s;
+    animation-name: fadeIn;
+    animation-duration: 0.4s
+}
+/* Popup Header */
+.popup-header {
+    padding: 2px 16px;
+    background-color: #0076bc;
+    color: white;
+}
+/* Popup Body */
+.popup-body {padding: 2px 16px;}
+/* Popup Content */
+.popup-content {
+    position: fixed;
+    bottom: 60px;
+    background-color: #fefefe;
+    width: 100%;
+    -webkit-animation-name: slideIn;
+    -webkit-animation-duration: 0.4s;
+    animation-name: slideIn;
+    animation-duration: 0.4s
+}
+
+/* The Close Button  on the Popup Styles*/
+.close {
+    color: white;
+    float: right;
+    font-size: 56px;
+    font-weight: bold;
+	
+}
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+#placeResultsButton{
+	
+	display:none;
+}
+/* Add Animation for the popup */
+@-webkit-keyframes slideIn {
+    from {bottom: -300px; opacity: 0} 
+    to {bottom: 0; opacity: 1}
+}
+
+@keyframes slideIn {
+    from {bottom: -300px; opacity: 0}
+    to {bottom: 0; opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+}
+#placesList{
+	margin:10px;
+
+}
+@keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+}
+/* Style for the search address input field */
+#searchInput{
+    border-radius: 5px;
+    border: 4px solid #0076bc;
+}
+/* Map Style */
+#map {
+        height: 63vh;
+        width: 95vw;
+		
+       }
